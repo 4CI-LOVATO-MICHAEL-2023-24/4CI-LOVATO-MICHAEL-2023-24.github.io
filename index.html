@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mio Sito</title>
-</head>
-<body>
-    <h1>Benvenuto nel mio sito!</h1>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chernobyl: Before & After</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      /* Background Animation */
+      .animated-bg {
+        background: linear-gradient(-45deg, #1f2937, #4b5563, #111827, #374151);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+  </head>
+
+  <body class="animated-bg min-h-screen flex flex-col items-center justify-center text-white font-sans">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-bold mb-4">Chernobyl: Before & After</h1>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto">Scopri l'impatto del disastro nucleare attraverso immagini satellitari suggestive del "Prima" e "Dopo".</p>
+    </header>
+
+    <!-- Image Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full px-4">
+      <!-- Before -->
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Prima del Disastro</h2>
+        <img src="your_before_image.jpg" alt="Chernobyl Before" class="rounded-xl mb-4 w-full h-64 object-cover" />
+        <p class="text-gray-400 text-center">Una città viva, immersa nella natura, prima del 1986.</p>
+      </div>
+
+      <!-- After -->
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Dopo il Disastro</h2>
+        <img src="your_after_image.jpg" alt="Chernobyl After" class="rounded-xl mb-4 w-full h-64 object-cover grayscale" />
+        <p class="text-gray-400 text-center">La zona di esclusione e i cambiamenti visibili dallo spazio dopo l'incidente.</p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <footer class="mt-12">
+      <button class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl text-lg font-medium hover:bg-yellow-400 transition">
+        Esplora la Storia Completa
+      </button>
+    </footer>
+  </body>
 </html>
