@@ -5,26 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chernobyl: La Storia Completa</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      /* Background Animation */
+      .animated-bg {
+        background: linear-gradient(-45deg, #1f2937, #4b5563, #111827, #374151);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Custom Styles */
+      .section-title {
+        color: #fbbf24;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .section-text {
+        color: #e5e7eb;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        text-align: justify;
+      }
+      .callout {
+        background: rgba(0, 0, 0, 0.7);
+        border-left: 4px solid #fbbf24;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        color: #fbbf24;
+      }
+      .callout h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .callout p {
+        font-size: 1.125rem;
+      }
+      .cta-btn {
+        background-color: #fbbf24;
+        color: #111827;
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 1.125rem;
+        text-align: center;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      .cta-btn:hover {
+        background-color: #f59e0b;
+        transform: scale(1.05);
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-gray-900 text-white">
-    <header class="text-center py-12">
-      <h1 class="text-4xl font-bold mb-6">La Storia Completa di Chernobyl</h1>
-      <p class="text-xl text-gray-300 max-w-4xl mx-auto">Nel 1986, un disastro nucleare cambió per sempre la storia e il paesaggio. Scopri i dettagli del tragico evento.</p>
+
+  <body class="animated-bg min-h-screen flex flex-col items-center justify-start text-white font-sans">
+    <!-- Header -->
+    <header class="text-center py-12 bg-gradient-to-r from-gray-800 via-gray-900 to-black w-full">
+      <h1 class="text-5xl font-bold mb-4 text-yellow-500">Chernobyl: La Storia Completa</h1>
+      <p class="text-xl text-gray-300 max-w-4xl mx-auto">Nel 1986, un disastro nucleare scosse il mondo. Esplora la tragedia di Chernobyl e il suo impatto duraturo sull'umanità e sull'ambiente.</p>
     </header>
 
-    <section class="px-6 py-12">
-      <h2 class="text-3xl font-semibold mb-6">Il Disastro di Chernobyl</h2>
-      <p class="text-lg text-gray-300 mb-6">Il 26 aprile 1986, il reattore numero 4 della centrale nucleare di Chernobyl esplose, liberando enormi quantità di radiazioni nell'aria e causando uno dei peggiori incidenti nucleari della storia. La catastrofe ha avuto un impatto devastante sulle persone e sull'ambiente circostante.</p>
-      
-      <p class="text-lg text-gray-300">Ancora oggi, le conseguenze di Chernobyl sono visibili, con una vasta zona di esclusione che rimane disabitata e un ecosistema che continua a essere influenzato dalla contaminazione radioattiva.</p>
+    <!-- Intro Section -->
+    <section class="py-12 px-6 max-w-5xl w-full text-center">
+      <h2 class="section-title">Il Disastro Nucleare di Chernobyl</h2>
+      <p class="section-text">Il 26 aprile 1986, il reattore numero 4 della centrale nucleare di Chernobyl, in Ucraina, esplose, rilasciando una quantità immensa di radiazioni nell'aria. Questo evento ha avuto conseguenze devastanti, che hanno influenzato milioni di persone e l'intero ecosistema. Scopri le cause, gli effetti e le sfide che il mondo ha affrontato dopo il disastro.</p>
     </section>
 
-    <!-- Back to Home Button -->
-    <footer class="text-center py-6">
+    <!-- Video Section -->
+    <section class="bg-gray-900 py-12 px-6">
+      <h3 class="section-title">Un Video Della Tragedia</h3>
+      <div class="flex justify-center">
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/6t7DPk7Nekg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Cause del Disastro -->
+    <section class="py-12 px-6 bg-gray-800 max-w-5xl w-full">
+      <h2 class="section-title">Le Cause del Disastro</h2>
+      <p class="section-text">Il disastro di Chernobyl è stato causato da una combinazione di errori umani, difetti di progettazione e mancanza di misure di sicurezza. Durante un test di sicurezza mal gestito, il reattore 4 subì un sovraccarico che portò alla sua esplosione. La disattenzione del personale, unita a gravi lacune nel sistema di progettazione del reattore, contribuì enormemente all'incidente.</p>
+    </section>
+
+    <!-- Conseguenze -->
+    <section class="py-12 px-6">
+      <h2 class="section-title">Le Conseguenze del Disastro</h2>
+      <p class="section-text">Le radiazioni hanno contaminato vaste aree dell'Ucraina, della Bielorussia e della Russia, costringendo milioni di persone a lasciare le loro case. La zona di esclusione di 30 km intorno alla centrale rimane tuttora inabitabile, e la fauna e la flora sono state gravemente danneggiate. Tuttavia, alcuni studi mostrano un curioso ritorno della natura nella zona, nonostante la persistente contaminazione.</p>
+    </section>
+
+    <!-- Callout -->
+    <section class="py-12 px-6 bg-gray-900">
+      <div class="callout">
+        <h3>Un'area di Studio Unica</h3>
+        <p>Nonostante i danni ambientali, la zona di esclusione è diventata un laboratorio naturale per gli scienziati, che studiano gli effetti delle radiazioni sulla fauna e sulla flora. La fauna selvatica sta lentamente tornando, e alcuni esperti sono sorpresi dalla resilienza della natura in questo ambiente estremo.</p>
+      </div>
+    </section>
+
+    <!-- Recovery Section -->
+    <section class="py-12 px-6 bg-gray-800">
+      <h2 class="section-title">La Recupero e la Nuova Centralina</h2>
+      <p class="section-text">Da Chernobyl a oggi, il processo di recupero è stato lungo e difficile. La costruzione di un nuovo sarcofago per il reattore numero 4, conosciuto come "New Safe Confinement", è stato completato nel 2016. Questo enorme arco di acciaio è progettato per contenere le radiazioni per almeno 100 anni, dando tempo per la decadenza radioattiva.</p>
+    </section>
+
+    <!-- Footer / Call to Action -->
+    <footer class="bg-gray-900 text-center py-12">
       <a href="index.html">
-        <button class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl text-lg font-medium hover:bg-yellow-400 transition">
-          Torna alla Home
-        </button>
+        <button class="cta-btn">Torna alla Home</button>
       </a>
     </footer>
   </body>
