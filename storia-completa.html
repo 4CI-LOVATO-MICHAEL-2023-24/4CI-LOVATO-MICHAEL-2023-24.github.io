@@ -7,16 +7,37 @@
   <title>Chernobyl: La Storia Completa</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* General Styles */
+    /* Background Animation */
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       color: #fff;
-      background: #111827;
+      background: #111827; /* fallback color */
       line-height: 1.75;
     }
 
+    .animated-bg {
+      background: linear-gradient(-45deg, #1f2937, #4b5563, #111827, #374151);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Content Wrapper */
     .content-wrapper {
       position: relative;
       z-index: 1;
@@ -105,7 +126,7 @@
   </style>
 </head>
 
-<body>
+<body class="animated-bg">
 
   <!-- Content Wrapper -->
   <div class="content-wrapper">
