@@ -17,16 +17,6 @@
       line-height: 1.75;
     }
 
-    .full-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
     .content-wrapper {
       position: relative;
       z-index: 1;
@@ -81,10 +71,35 @@
       }
     }
 
+    /* Large Title */
+    .main-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fbbf24;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fbbf24;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .section-text {
         font-size: 1rem;
+      }
+
+      .main-title {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -92,11 +107,14 @@
 
 <body>
 
-  <!-- Background Image -->
-  <img class="full-bg" src="https://via.placeholder.com/1500x800/333/fff?text=Chernobyl+Background" alt="Chernobyl Background" />
-
   <!-- Content Wrapper -->
   <div class="content-wrapper">
+
+    <!-- Main Title -->
+    <div class="section fade-up">
+      <h1 class="main-title">Chernobyl: La Storia Completa</h1>
+      <p class="subtitle">Un viaggio attraverso la tragedia nucleare e le sue conseguenze durature.</p>
+    </div>
 
     <!-- Intro Section -->
     <section class="section fade-up">
@@ -124,14 +142,6 @@
       <p class="section-text">
         Le conseguenze furono devastanti. La zona circostante Chernobyl, in particolare un'area di 30 km di raggio intorno alla centrale, venne evacuata. Le radiazioni contaminarono vasti territori, rendendo l'area pericolosa per decenni. Milioni di persone furono esposte a livelli pericolosi di radiazioni, e centinaia di migliaia furono costrette a lasciare le proprie case. Nonostante gli enormi danni, la zona di esclusione ha iniziato a mostrare segni di recupero naturale, con alcune specie animali che sono riuscite a prosperare in questo ambiente ostile.
       </p>
-    </section>
-
-    <!-- Video della Tragedia -->
-    <section class="section fade-up">
-      <h3 class="section-title">Guarda il video della tragedia</h3>
-      <div class="video-container fade-up">
-        <iframe width="100%" height="450" src="https://www.youtube.com/embed/6t7DPk7Nekg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
     </section>
 
     <!-- Recupero e Nuove Soluzioni -->
