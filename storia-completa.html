@@ -52,6 +52,7 @@
       text-align: center;
     }
 
+    /* Hover Effect on Paragraph */
     .section-text {
       font-size: 1.25rem;
       line-height: 1.75rem;
@@ -59,6 +60,12 @@
       max-width: 800px;
       text-align: justify;
       color: #e5e7eb;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .section-text:hover {
+      color: #fbbf24;
+      transform: translateY(-5px);
     }
 
     .cta-btn {
