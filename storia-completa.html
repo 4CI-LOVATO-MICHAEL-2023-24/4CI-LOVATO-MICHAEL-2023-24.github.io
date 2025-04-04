@@ -50,7 +50,6 @@
       margin-bottom: 3rem;
       padding: 2rem 0;
       text-align: center;
-      position: relative;
     }
 
     /* Hover Effect on Paragraph with Border */
@@ -64,7 +63,6 @@
       transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
       padding: 0.5rem;
       border-radius: 8px;
-      position: relative;
     }
 
     .section-text:hover {
@@ -73,24 +71,7 @@
       border: 2px solid #fbbf24;
     }
 
-    .section-title {
-      position: absolute;
-      top: -2rem; /* Puoi modificare la distanza del titolo rispetto al paragrafo */
-      left: 0;
-      right: 0;
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: #fbbf24;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      text-align: center;
-      z-index: -1;
-    }
-
-    .section:hover .section-title {
-      opacity: 1;
-    }
-
+    /* Call to Action */
     .cta-btn {
       background-color: #fbbf24;
       color: #111827;
@@ -109,19 +90,6 @@
       transform: scale(1.05);
     }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 1s forwards;
-    }
-
-    @keyframes fadeInUp {
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     /* Large Title */
     .main-title {
       font-size: 3rem;
@@ -137,6 +105,30 @@
       color: #fbbf24;
       text-align: center;
       margin-bottom: 2rem;
+    }
+
+    /* Language Selector */
+    .language-selector {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lang-btn img {
+      width: 30px;
+      height: 20px;
+    }
+
+    .lang-btn.selected {
+      border: 2px solid #fbbf24; /* Evidenzia il bottone selezionato con un bordo giallo */
     }
 
     /* Mobile Responsiveness */
@@ -158,6 +150,16 @@
 
 <body class="animated-bg">
 
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button class="lang-btn" id="it-btn" onclick="changeLanguage('it')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg" alt="Italiano">
+    </button>
+    <button class="lang-btn" id="uk-btn" onclick="changeLanguage('en')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_Kingdom.svg" alt="English">
+    </button>
+  </div>
+
   <!-- Content Wrapper -->
   <div class="content-wrapper">
 
@@ -167,35 +169,38 @@
       <p class="subtitle">Un viaggio attraverso la tragedia nucleare e le sue conseguenze durature.</p>
     </div>
 
-    <!-- Introduzione e Il Disastro -->
-    <section class="section fade-up">
-      <div class="section-title">Introduzione e Il Disastro</div>
+    <!-- Intro Section -->
+    <section class="section fade-up" id="intro">
       <p class="section-text">
-        Il 26 aprile 1986, l'esplosione del reattore 4 della centrale nucleare di Chernobyl, in Ucraina, scatenò un disastro nucleare senza precedenti. Un test di sicurezza mal gestito causò una reazione a catena che rilasciò enormi quantità di radiazioni nell'atmosfera, contaminando vasti territori di Ucraina, Bielorussia e Russia. Inizialmente, le autorità locali non compresero la gravità dell'incidente, portando a una gestione inadeguata della crisi. Le prime vittime furono i pompieri che tentarono di spegnere l'incendio, seguiti da molti altri che pagarono con la vita a causa dell'errore umano e delle carenze strutturali del reattore.
+        Nel 1986, un disastro nucleare scosse il mondo. L'esplosione del reattore 4 della centrale nucleare di Chernobyl, in Ucraina, ha rilasciato una quantità immensa di radiazioni nell'aria, influenzando milioni di persone e l'intero ecosistema.
+      </p>
+    </section>
+
+    <!-- Disastro Section -->
+    <section class="section fade-up" id="disastro">
+      <p class="section-text">
+        Il 26 aprile 1986, il reattore 4 della centrale nucleare di Chernobyl esplose durante un test di sicurezza mal gestito. La reazione a catena che ne derivò ha rilasciato enormi quantità di radiazioni, contaminando vaste aree di Ucraina, Bielorussia e Russia.
       </p>
     </section>
 
     <!-- Cause del Disastro -->
-    <section class="section fade-up">
-      <div class="section-title">Le Cause del Disastro</div>
+    <section class="section fade-up" id="cause">
       <p class="section-text">
-        Il disastro fu causato da un test mal progettato, durante il quale il reattore venne sovraccaricato oltre le sue capacità. Il test mirava a verificare la possibilità di un guasto nei sistemi di raffreddamento, ma errori umani, disattenzione e difetti nel design del reattore provocarono una serie di esplosioni che liberarono radiazioni a livelli devastanti. Questo errore ha segnato un punto di non ritorno nella storia della tecnologia nucleare, portando a cambiamenti significativi nelle politiche di sicurezza a livello mondiale.
+        La causa principale del disastro fu un test mal gestito, durante il quale il reattore venne sovraccaricato al di là delle sue capacità operative. La situazione sfuggì di mano, provocando una catastrofe che avrebbe cambiato per sempre la storia della tecnologia nucleare.
       </p>
     </section>
 
-    <!-- Conseguenze a Lungo Periodo -->
-    <section class="section fade-up">
-      <div class="section-title">Le Conseguenze a Lungo Periodo</div>
+    <!-- Conseguenze -->
+    <section class="section fade-up" id="conseguenze">
       <p class="section-text">
-        L'area circostante Chernobyl, con un raggio di 30 km, fu evacuata e contaminata per decenni. Milioni di persone furono esposte a livelli pericolosi di radiazioni e centinaia di migliaia furono costrette a lasciare le proprie case. Sebbene l'impatto umano e ambientale fosse enorme, la zona di esclusione ha iniziato a mostrare segni di recupero naturale, con alcune specie animali che hanno trovato rifugio in quest'area apparentemente ostile.
+        Le conseguenze furono devastanti. La zona circostante Chernobyl, in particolare un'area di 30 km di raggio intorno alla centrale, venne evacuata. Le radiazioni contaminarono vasti territori, rendendo l'area pericolosa per decenni.
       </p>
     </section>
 
     <!-- Recupero e Nuove Soluzioni -->
-    <section class="section fade-up">
-      <div class="section-title">Il Recupero e le Nuove Soluzioni</div>
+    <section class="section fade-up" id="recupero">
       <p class="section-text">
-        Nonostante il danno iniziale, il processo di recupero di Chernobyl è stato lungo e complesso. Nel 2016, è stato completato il "New Safe Confinement", una struttura in acciaio progettata per contenere le radiazioni del reattore 4 per almeno 100 anni, limitando l'esposizione e proteggendo l'ambiente circostante. Questo progetto è diventato un simbolo di resilienza, dimostrando che la scienza e l'ingegneria possono affrontare anche le sfide più straordinarie.
+        Nonostante l'enorme danno iniziale, il recupero di Chernobyl è stato un lungo processo. Nel 2016 è stato completato il "New Safe Confinement", una gigantesca struttura in acciaio che copre il reattore numero 4, progettata per contenere le radiazioni per almeno 100 anni.
       </p>
     </section>
 
@@ -208,6 +213,30 @@
 
   </div>
 
+  <script>
+    function changeLanguage(language) {
+      // Rimuovi la classe "selected" da entrambi i bottoni
+      document.getElementById('it-btn').classList.remove('selected');
+      document.getElementById('uk-btn').classList.remove('selected');
+
+      // Aggiungi la classe "selected" al bottone selezionato
+      if (language === 'it') {
+        document.getElementById('it-btn').classList.add('selected');
+        document.getElementById('intro').innerHTML = 'Nel 1986, un disastro nucleare scosse il mondo...';
+        document.getElementById('disastro').innerHTML = 'Il 26 aprile 1986, il reattore 4 della centrale nucleare di Chernobyl esplose...';
+        document.getElementById('cause').innerHTML = 'La causa principale del disastro fu un test mal gestito...';
+        document.getElementById('conseguenze').innerHTML = 'Le conseguenze furono devastanti...';
+        document.getElementById('recupero').innerHTML = 'Nonostante l\'enorme danno iniziale, il recupero di Chernobyl è stato un lungo processo...';
+      } else {
+        document.getElementById('uk-btn').classList.add('selected');
+        document.getElementById('intro').innerHTML = 'In 1986, a nuclear disaster shook the world...';
+        document.getElementById('disastro').innerHTML = 'On April 26, 1986, Reactor 4 of the Chernobyl nuclear plant exploded...';
+        document.getElementById('cause').innerHTML = 'The main cause of the disaster was a poorly managed test...';
+        document.getElementById('conseguenze').innerHTML = 'The consequences were devastating...';
+        document.getElementById('recupero').innerHTML = 'Despite the enormous initial damage, Chernobyl\'s recovery was a long process...';
+      }
+    }
+  </script>
 </body>
 
 </html>
