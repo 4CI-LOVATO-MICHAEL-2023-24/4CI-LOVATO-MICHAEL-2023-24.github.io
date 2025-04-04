@@ -153,48 +153,78 @@
         font-size: 1.2rem;
       }
     }
+
+    /* Language Buttons */
+    .language-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+
+    .language-buttons button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .language-buttons img {
+      width: 30px;
+      height: 20px;
+    }
   </style>
 </head>
 
 <body class="animated-bg">
+
+  <!-- Language Buttons -->
+  <div class="language-buttons">
+    <button onclick="changeLanguage('it')">
+      <img src="italy-flag.png" alt="Bandiera Italiana">
+    </button>
+    <button onclick="changeLanguage('en')">
+      <img src="uk-flag.png" alt="English Flag">
+    </button>
+  </div>
 
   <!-- Content Wrapper -->
   <div class="content-wrapper">
 
     <!-- Main Title -->
     <div class="section fade-up">
-      <h1 class="main-title">Chernobyl: La Storia Completa</h1>
-      <p class="subtitle">Un viaggio attraverso la tragedia nucleare e le sue conseguenze durature.</p>
+      <h1 id="main-title" class="main-title">Chernobyl: La Storia Completa</h1>
+      <p id="subtitle" class="subtitle">Un viaggio attraverso la tragedia nucleare e le sue conseguenze durature.</p>
     </div>
 
     <!-- Introduzione e Il Disastro -->
     <section class="section fade-up">
-      <div class="section-title">Introduzione e Il Disastro</div>
-      <p class="section-text">
-        Il 26 aprile 1986, l'esplosione del reattore 4 della centrale nucleare di Chernobyl, in Ucraina, scatenò un disastro nucleare senza precedenti. Un test di sicurezza mal gestito causò una reazione a catena che rilasciò enormi quantità di radiazioni nell'atmosfera, contaminando vasti territori di Ucraina, Bielorussia e Russia. Inizialmente, le autorità locali non compresero la gravità dell'incidente, portando a una gestione inadeguata della crisi. Le prime vittime furono i pompieri che tentarono di spegnere l'incendio, seguiti da molti altri che pagarono con la vita a causa dell'errore umano e delle carenze strutturali del reattore.
+      <div id="section-title-1" class="section-title">Introduzione e Il Disastro</div>
+      <p id="section-text-1" class="section-text">
+        Il 26 aprile 1986, l'esplosione del reattore 4 della centrale nucleare di Chernobyl, in Ucraina, scatenò un disastro nucleare senza precedenti. Un test di sicurezza mal gestito causò una reazione a catena che rilasciò enormi quantità di radiazioni nell'atmosfera, contaminando vasti territori di Ucraina, Bielorussia e Russia. Inizialmente, le autorità locali non compresero la gravità dell'incidente, portando a una gestione inadeguata della crisi.
       </p>
     </section>
 
     <!-- Cause del Disastro -->
     <section class="section fade-up">
-      <div class="section-title">Le Cause del Disastro</div>
-      <p class="section-text">
+      <div id="section-title-2" class="section-title">Le Cause del Disastro</div>
+      <p id="section-text-2" class="section-text">
         Il disastro fu causato da un test mal progettato, durante il quale il reattore venne sovraccaricato oltre le sue capacità. Il test mirava a verificare la possibilità di un guasto nei sistemi di raffreddamento, ma errori umani, disattenzione e difetti nel design del reattore provocarono una serie di esplosioni che liberarono radiazioni a livelli devastanti. Questo errore ha segnato un punto di non ritorno nella storia della tecnologia nucleare, portando a cambiamenti significativi nelle politiche di sicurezza a livello mondiale.
       </p>
     </section>
 
     <!-- Conseguenze a Lungo Periodo -->
     <section class="section fade-up">
-      <div class="section-title">Le Conseguenze a Lungo Periodo</div>
-      <p class="section-text">
+      <div id="section-title-3" class="section-title">Le Conseguenze a Lungo Periodo</div>
+      <p id="section-text-3" class="section-text">
         L'area circostante Chernobyl, con un raggio di 30 km, fu evacuata e contaminata per decenni. Milioni di persone furono esposte a livelli pericolosi di radiazioni e centinaia di migliaia furono costrette a lasciare le proprie case. Sebbene l'impatto umano e ambientale fosse enorme, la zona di esclusione ha iniziato a mostrare segni di recupero naturale, con alcune specie animali che hanno trovato rifugio in quest'area apparentemente ostile.
       </p>
     </section>
 
     <!-- Recupero e Nuove Soluzioni -->
     <section class="section fade-up">
-      <div class="section-title">Il Recupero e le Nuove Soluzioni</div>
-      <p class="section-text">
+      <div id="section-title-4" class="section-title">Il Recupero e le Nuove Soluzioni</div>
+      <p id="section-text-4" class="section-text">
         Nonostante il danno iniziale, il processo di recupero di Chernobyl è stato lungo e complesso. Nel 2016, è stato completato il "New Safe Confinement", una struttura in acciaio progettata per contenere le radiazioni del reattore 4 per almeno 100 anni, limitando l'esposizione e proteggendo l'ambiente circostante. Questo progetto è diventato un simbolo di resilienza, dimostrando che la scienza e l'ingegneria possono affrontare anche le sfide più straordinarie.
       </p>
     </section>
@@ -207,6 +237,51 @@
     </section>
 
   </div>
+
+  <script>
+    const translations = {
+      it: {
+        mainTitle: "Chernobyl: La Storia Completa",
+        subtitle: "Un viaggio attraverso la tragedia nucleare e le sue conseguenze durature.",
+        sectionTitle1: "Introduzione e Il Disastro",
+        sectionText1: "Il 26 aprile 1986, l'esplosione del reattore 4 della centrale nucleare di Chernobyl, in Ucraina, scatenò un disastro nucleare senza precedenti. Un test di sicurezza mal gestito causò una reazione a catena che rilasciò enormi quantità di radiazioni nell'atmosfera, contaminando vasti territori di Ucraina, Bielorussia e Russia. Inizialmente, le autorità locali non compresero la gravità dell'incidente, portando a una gestione inadeguata della crisi.",
+        sectionTitle2: "Le Cause del Disastro",
+        sectionText2: "Il disastro fu causato da un test mal progettato, durante il quale il reattore venne sovraccaricato oltre le sue capacità. Il test mirava a verificare la possibilità di un guasto nei sistemi di raffreddamento, ma errori umani, disattenzione e difetti nel design del reattore provocarono una serie di esplosioni che liberarono radiazioni a livelli devastanti. Questo errore ha segnato un punto di non ritorno nella storia della tecnologia nucleare, portando a cambiamenti significativi nelle politiche di sicurezza a livello mondiale.",
+        sectionTitle3: "Le Conseguenze a Lungo Periodo",
+        sectionText3: "L'area circostante Chernobyl, con un raggio di 30 km, fu evacuata e contaminata per decenni. Milioni di persone furono esposte a livelli pericolosi di radiazioni e centinaia di migliaia furono costrette a lasciare le proprie case. Sebbene l'impatto umano e ambientale fosse enorme, la zona di esclusione ha iniziato a mostrare segni di recupero naturale, con alcune specie animali che hanno trovato rifugio in quest'area apparentemente ostile.",
+        sectionTitle4: "Il Recupero e le Nuove Soluzioni",
+        sectionText4: "Nonostante il danno iniziale, il processo di recupero di Chernobyl è stato lungo e complesso. Nel 2016, è stato completato il 'New Safe Confinement', una struttura in acciaio progettata per contenere le radiazioni del reattore 4 per almeno 100 anni, limitando l'esposizione e proteggendo l'ambiente circostante. Questo progetto è diventato un simbolo di resilienza, dimostrando che la scienza e l'ingegneria possono affrontare anche le sfide più straordinarie."
+      },
+      en: {
+        mainTitle: "Chernobyl: The Complete Story",
+        subtitle: "A journey through the nuclear tragedy and its lasting consequences.",
+        sectionTitle1: "Introduction and The Disaster",
+        sectionText1: "On April 26, 1986, the explosion of reactor 4 at the Chernobyl nuclear plant in Ukraine triggered an unprecedented nuclear disaster. A poorly managed safety test caused a chain reaction that released massive amounts of radiation into the atmosphere, contaminating large areas of Ukraine, Belarus, and Russia. Initially, local authorities did not comprehend the severity of the incident, leading to inadequate crisis management.",
+        sectionTitle2: "The Causes of the Disaster",
+        sectionText2: "The disaster was caused by a poorly designed test, during which the reactor was overloaded beyond its capabilities. The test aimed to check the possibility of a cooling system failure, but human errors, neglect, and design flaws in the reactor led to a series of explosions that released radiation at devastating levels. This error marked a turning point in nuclear technology history, leading to significant changes in safety policies worldwide.",
+        sectionTitle3: "The Long-Term Consequences",
+        sectionText3: "The area surrounding Chernobyl, within a 30km radius, was evacuated and contaminated for decades. Millions of people were exposed to dangerous levels of radiation, and hundreds of thousands were forced to leave their homes. Although the human and environmental impact was enormous, the exclusion zone began to show signs of natural recovery, with some animal species finding refuge in this seemingly hostile area.",
+        sectionTitle4: "Recovery and New Solutions",
+        sectionText4: "Despite the initial damage, Chernobyl's recovery process has been long and complex. In 2016, the 'New Safe Confinement' was completed, a steel structure designed to contain the radiation from reactor 4 for at least 100 years, limiting exposure and protecting the surrounding environment. This project has become a symbol of resilience, demonstrating that science and engineering can tackle even the most extraordinary challenges."
+      }
+    };
+
+    function changeLanguage(language) {
+      document.getElementById("main-title").textContent = translations[language].mainTitle;
+      document.getElementById("subtitle").textContent = translations[language].subtitle;
+      document.getElementById("section-title-1").textContent = translations[language].sectionTitle1;
+      document.getElementById("section-text-1").textContent = translations[language].sectionText1;
+      document.getElementById("section-title-2").textContent = translations[language].sectionTitle2;
+      document.getElementById("section-text-2").textContent = translations[language].sectionText2;
+      document.getElementById("section-title-3").textContent = translations[language].sectionTitle3;
+      document.getElementById("section-text-3").textContent = translations[language].sectionText3;
+      document.getElementById("section-title-4").textContent = translations[language].sectionTitle4;
+      document.getElementById("section-text-4").textContent = translations[language].sectionText4;
+    }
+
+    // Set default language to Italian
+    changeLanguage('it');
+  </script>
 
 </body>
 
