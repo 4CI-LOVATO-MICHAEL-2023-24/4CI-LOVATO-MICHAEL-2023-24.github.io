@@ -6,7 +6,6 @@
     <title>Chernobyl: Before & After</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-      /* Background Animation */
       .animated-bg {
         background: linear-gradient(-45deg, #1f2937, #4b5563, #111827, #374151);
         background-size: 400% 400%;
@@ -19,7 +18,6 @@
         100% { background-position: 0% 50%; }
       }
 
-      /* Hover Effect */
       .hover-grow {
         transition: transform 0.3s ease;
       }
@@ -33,23 +31,30 @@
     <!-- Header -->
     <header class="text-center mb-12">
       <h1 class="text-5xl font-bold mb-4">Chernobyl: Before & After</h1>
-      <p class="text-xl text-gray-300 max-w-xl mx-auto">Scopri l'impatto del disastro nucleare attraverso immagini satellitari suggestive del "Prima" e "Dopo".</p>
+      <p class="text-xl text-gray-300 max-w-xl mx-auto">Scopri l'impatto del disastro nucleare attraverso immagini satellitari suggestive del "Prima", "Subito dopo" e "Oggi".</p>
     </header>
 
     <!-- Image Section -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full px-4">
-      <!-- Before -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full px-4">
+      <!-- Prima -->
       <div class="bg-gray-800 p-4 rounded-2xl shadow-lg hover-grow">
         <h2 class="text-2xl font-semibold mb-4 text-center">Prima del Disastro</h2>
-        <img src="prima.PNG" alt="Chernobyl Before" class="rounded-xl mb-4 w-full h-64 object-cover object-center" />
+        <img src="prima.PNG" alt="Chernobyl Prima" class="rounded-xl mb-4 w-full h-64 object-cover object-center" />
         <p class="text-gray-400 text-center">Una città viva, immersa nella natura, prima del 1986.</p>
       </div>
 
-      <!-- After -->
+      <!-- Subito Dopo -->
       <div class="bg-gray-800 p-4 rounded-2xl shadow-lg hover-grow">
-        <h2 class="text-2xl font-semibold mb-4 text-center">Dopo il Disastro</h2>
-        <img src="dopo.PNG" alt="Chernobyl After" class="rounded-xl mb-4 w-full h-64 object-cover object-center grayscale contrast-125" />
-        <p class="text-gray-400 text-center">La zona di esclusione e i cambiamenti visibili dallo spazio dopo l'incidente.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-center">Subito Dopo</h2>
+        <img src="subito_dopo.PNG" alt="Chernobyl Subito Dopo" class="rounded-xl mb-4 w-full h-64 object-cover object-center grayscale" />
+        <p class="text-gray-400 text-center">L'impatto visibile a breve termine dopo l'incidente nucleare.</p>
+      </div>
+
+      <!-- Oggi -->
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-lg hover-grow">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Oggi</h2>
+        <img src="oggi.PNG" alt="Chernobyl Oggi" class="rounded-xl mb-4 w-full h-64 object-cover object-center grayscale contrast-125" />
+        <p class="text-gray-400 text-center">La zona di esclusione e i cambiamenti visibili oggi dallo spazio.</p>
       </div>
     </section>
 
